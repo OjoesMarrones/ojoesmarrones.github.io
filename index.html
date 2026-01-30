@@ -3,18 +3,45 @@
   <head>
     <title>Compliment o'clock</title>
     <style>
+      @font-face {
+        font-family: "Peachy Rebels";
+        src: url("fonts/PeachyRebels.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
       body {
-        background-color: pink;
+        margin: 0;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        font-family: sans-serif;
-        font-size: 3rem;
+
+        font-family: "Peachy Rebels", sans-serif;
+        font-size: 3.5rem;
+        text-align: center;
+        color: #333;
+        transition: background-color 0.5s ease;
       }
     </style>
   </head>
   <body>
     You're awesome! 💖
+
+    <script>
+      const happyColours = [
+        "#ffccd5", // soft pink
+        "#ffe5b4", // peach
+        "#fff1a8", // warm yellow
+        "#d7f5e9", // mint
+        "#e0d7ff", // lavender
+        "#cce7ff"  // baby blue
+      ];
+
+      const randomColour =
+        happyColours[Math.floor(Math.random() * happyColours.length)];
+
+      document.body.style.backgroundColor = randomColour;
+    </script>
   </body>
 </html>
