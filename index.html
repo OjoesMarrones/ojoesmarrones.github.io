@@ -19,7 +19,7 @@
         align-items: center;
 
         font-family: "Peachy Rebels", sans-serif;
-        font-size: 3.5rem;
+        font-size: 5rem;
         text-align: center;
         color: #333;
         transition: background-color 0.5s ease;
@@ -27,7 +27,9 @@
     </style>
   </head>
   <body>
-    You're awesome! 💖
+    <div id="compliment">
+      Loading…
+    </div>
 
     <script>
       const happyColours = [
@@ -43,6 +45,25 @@
         happyColours[Math.floor(Math.random() * happyColours.length)];
 
       document.body.style.backgroundColor = randomColour;
+
+      fetch("compliments.txt")
+        .then(response => response.text())
+        .then(text => {
+          const compliments = text
+            .split("\n")
+            .map(line => line.trim())
+            .filter(line => line.length > 0);
+
+          const randomIndex = Math.floor(Math.random() * compliments.length);
+          const randomCompliment = compliments[randomIndex];
+
+          document.getElementById("compliment").textContent = randomCompliment;
+        })
+        .catch(error => {
+          document.getElementById("compliment").textContent =
+            "You're awesome (even when things go wrong) 💖";
+          console.error(error);
+        });
     </script>
   </body>
 </html>
