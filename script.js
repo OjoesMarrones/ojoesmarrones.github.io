@@ -13,18 +13,6 @@ const randomColour =
 
 document.body.style.backgroundColor = randomColour;
 
-// Function to fit text to size of screen
-function fitText() {
-  const el = document.getElementById("compliment");
-  let size = 80; // starting size in px
-  el.style.fontSize = size + "px";
-
-  while (el.scrollHeight > window.innerHeight * 0.9) {
-    size--;
-    el.style.fontSize = size + "px";
-  }
-}
-
 // Function to retreive random compliment from compliments text file
 async function loadCompliment() {
   try {
@@ -39,7 +27,6 @@ async function loadCompliment() {
     const randomIndex = Math.floor(Math.random() * compliments.length);
     document.getElementById("compliment").textContent = compliments[randomIndex];
     
-    fitText();
   } 
   catch (error) {
     document.getElementById("compliment").textContent = "You're awesome (even when things go wrong) 💖";
@@ -47,4 +34,17 @@ async function loadCompliment() {
   }
 }
 
+// Function to fit text to size of screen
+function fitText() {
+  const el = document.getElementById("compliment");
+  let size = 80; // starting size in px
+  el.style.fontSize = size + "px";
+
+  while (el.scrollHeight > window.innerHeight * 0.9) {
+    size--;
+    el.style.fontSize = size + "px";
+  }
+}
+
 loadCompliment();
+fitText();
