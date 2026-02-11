@@ -5,67 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compliment o'clock</title>
     <link rel="icon" type="image/x-icon" href="/HeartFavicon.ico">
-    <style>
-      @font-face {
-        font-family: "Peachy Rebels";
-        src: url("fonts/PeachyRebels.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-      }
 
-      body {
-        margin: 0;
-        height: 100svh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        font-family: "Peachy Rebels", sans-serif;
-        font-size: 5rem;
-        text-align: center;
-        color: #333;
-        transition: background-color 0.5s ease;
-      }
-    </style>
+    <!-- Link to CSS file-->
+    <link rel="stylesheet" href="styles.css">
   </head>
+
   <body>
     <div id="compliment">
       Loading…
     </div>
 
-    <script>
-      const happyColours = [
-        "#ffccd5", // soft pink
-        "#ffe5b4", // peach
-        "#fff1a8", // warm yellow
-        "#d7f5e9", // mint
-        "#e0d7ff", // lavender
-        "#cce7ff"  // baby blue
-      ];
-
-      const randomColour =
-        happyColours[Math.floor(Math.random() * happyColours.length)];
-
-      document.body.style.backgroundColor = randomColour;
-
-      fetch("compliments.txt")
-        .then(response => response.text())
-        .then(text => {
-          const compliments = text
-            .split("\n")
-            .map(line => line.trim())
-            .filter(line => line.length > 0);
-
-          const randomIndex = Math.floor(Math.random() * compliments.length);
-          const randomCompliment = compliments[randomIndex];
-
-          document.getElementById("compliment").textContent = randomCompliment;
-        })
-        .catch(error => {
-          document.getElementById("compliment").textContent =
-            "You're awesome (even when things go wrong) 💖";
-          console.error(error);
-        });
-    </script>
+    <!-- Link JavaScript file -->
+    <script src="script.js" defer></script>
   </body>
 </html>
