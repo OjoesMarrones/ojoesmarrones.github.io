@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Peachy Rebels";
+  src: url("fonts/PeachyRebels.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Peachy Rebels", sans-serif;
+  font-size: 5rem;
+  text-align: center;
+  color: #333;
+  transition: background-color 0.5s ease;
+}
+
+#compliment {
+  padding: 1rem;
+}
