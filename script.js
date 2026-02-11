@@ -34,3 +34,17 @@ async function loadCompliment() {
 }
 
 loadCompliment();
+
+function fitText() {
+  const el = document.getElementById("compliment");
+  let size = 80; // starting size in px
+  el.style.fontSize = size + "px";
+
+  while (el.scrollHeight > window.innerHeight * 0.9) {
+    size--;
+    el.style.fontSize = size + "px";
+  }
+}
+
+window.addEventListener("load", fitText);
+window.addEventListener("resize", fitText);
