@@ -1,10 +1,10 @@
 const happyColours = [
-  "#ffccd5", // pink
-  "#ffe5b4", // peach
-  "#fff1a8", // yellow
-  "#d7f5e9", // mint
-  "#e0d7ff", // lavender
-  "#cce7ff"  // blue
+  "#fab4c1", // pink
+  "#fcdea2", // peach
+  "#fff28a", // yellow
+  "#b8f2da", // mint
+  "#c8b8ff", // lavender
+  "#b3dcfc"  // blue
 ];
 
 // Pick random background colour
